@@ -4,6 +4,7 @@ import { View } from "react-native";
 import { ScrollView } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { GameCard } from "./Card";
+import { Logo } from "./Logo";
 
 export function Main() {
   const insets = useSafeAreaInsets();
@@ -17,6 +18,9 @@ export function Main() {
 
   return (
     <View style={{ paddingTop: insets.top, paddingBottom: insets.bottom }}>
+      <View style={{ marginBottom: 20 }}>
+        <Logo />
+      </View>
       <ScrollView>
         <GameCard />
       </ScrollView>
