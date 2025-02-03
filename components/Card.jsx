@@ -1,18 +1,21 @@
 import { useEffect, useRef } from "react";
 import { Animated, Image, StyleSheet, Text, View } from "react-native";
+import { Score } from "./Score";
 
 export function GameCard({ game }) {
   return (
-    <View style={styles.card}>
-      <Text style={styles.score}>Game score</Text>
-      <Text style={styles.title}>Game title</Text>
+    <View className="bg-slate-700 p-4 rounded-xl gap-4 mb-10">
       <Image
         source={{
           uri: "https://cdna.artstation.com/p/assets/images/images/037/801/742/medium/lee-court-oot-lc-v1.jpg?1621357457",
         }}
         style={styles.image}
       />
-      <Text style={styles.description}>Game description</Text>
+      <View>
+        <Score />
+        <Text style={styles.title}>Game title</Text>
+        <Text className="text-white">Game description</Text>
+      </View>
     </View>
   );
 }
@@ -23,8 +26,8 @@ export function AnimatedGameCard({ game, index }) {
   useEffect(() => {
     Animated.timing(opacity, {
       toValue: 1,
-      duration: 500,
-      delay: index * 500,
+      duration: 250,
+      delay: index * 250,
       useNativeDriver: true,
     }).start();
   }, [opacity, index]);

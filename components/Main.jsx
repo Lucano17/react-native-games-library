@@ -3,7 +3,7 @@ import { View } from "react-native";
 // import { getLatestGames } from "../lib/metacritic";
 import { ScrollView } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
-import { AnimatedGameCard, GameCard } from "./Card";
+import { AnimatedGameCard } from "./Card";
 import { Logo } from "./Logo";
 
 export function Main() {
@@ -31,7 +31,7 @@ export function Main() {
         <FlatList
         data={games}
         keyExtractor={game => game.slug}
-        renderItem={({item}) => <GameCard game={item} />}
+        renderItem={({item, index}) => <GameCard game={item} index={index}/>}
         />
         )
       ))} */}
