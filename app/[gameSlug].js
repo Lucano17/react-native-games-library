@@ -1,15 +1,16 @@
 import { Link } from "expo-router";
-import { Text, View } from "react-native";
+import { Text } from "react-native";
 import { useLocalSearchParams } from "expo-router";
+import { Screen } from "../components/Screen";
 
 export default function GameDetail() {
-  const { id } = useLocalSearchParams();
+  const { gameSlug } = useLocalSearchParams();
   return (
-    <View className="flex-1 justify-center items-center">
-      <Text className="text-white">Detalles del juego: {id}</Text>
+    <Screen>
+      <Text className="text-white">Detalles del juego: {gameSlug}</Text>
       <Link href={"/"} className="text-blue-500">
         Volver atrás
       </Link>
-    </View>
+    </Screen>
   );
 }

@@ -1,15 +1,10 @@
-import { Pressable, View } from "react-native";
-import { Link } from "expo-router";
 // import { useEffect, useState } from "react";
 // import { getLatestGames } from "../lib/metacritic";
 import { ScrollView } from "react-native";
-import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { AnimatedGameCard } from "./Card";
-import { Logo } from "./Logo";
-import { CircleInfoIcon } from "./Icons";
+import { Screen } from "./Screen";
 
 export function Main() {
-  const insets = useSafeAreaInsets();
   //   const [games, setGames] = useState([]);
 
   //   useEffect(() => {
@@ -19,22 +14,7 @@ export function Main() {
   //   }, []);
 
   return (
-    <View style={{ paddingTop: insets.top, paddingBottom: insets.bottom }}>
-      <View style={{ marginBottom: 20 }}>
-        <Logo />
-      </View>
-      <Link href={"/about"} asChild>
-        <Pressable>
-          {({ pressed }) => (
-            <CircleInfoIcon
-              style={{
-                opacity: pressed ? 0.5 : 1,
-                color: pressed ? "blue" : "white", //arreglar o hacer con tailwind import styled StyledPressable = styled(Pressale) y cambiar el componente Pressable por el nuevo y poner active:opacity & opacity:text-color
-              }}
-            />
-          )}
-        </Pressable>
-      </Link>
+    <Screen>
       <ScrollView>
         <AnimatedGameCard />
         <AnimatedGameCard />
@@ -70,6 +50,6 @@ export function Main() {
           </Text>
         )}
       </Pressable> */}
-    </View>
+    </Screen>
   );
 }
