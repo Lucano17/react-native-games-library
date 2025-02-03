@@ -24,16 +24,11 @@ export function Main() {
       { games.lenght === 0 ? (
       <ActivityIndicator color={"#fff"} size={"large"} />
       ) : (
-       games.map((game) => (
-        <ScrollView>
-          <Text>{game.slug}</Text>
-          <Text>{game.score}</Text>
-          <Image
-            source={{ uri: game.image }}
-            style={styles.image}
-          />
-          <Text>{game.description}</Text>
-        </ScrollView>
+        <FlatList
+        data={games}
+        keyExtractor={game => game.slug}
+        renderItem={({item}) => <GameCard game={item} />}
+        />
         )
       ))} */}
 
