@@ -3,7 +3,7 @@ import { View } from "react-native";
 // import { getLatestGames } from "../lib/metacritic";
 import { ScrollView } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
-import { GameCard } from "./Card";
+import { AnimatedGameCard, GameCard } from "./Card";
 import { Logo } from "./Logo";
 
 export function Main() {
@@ -22,7 +22,7 @@ export function Main() {
         <Logo />
       </View>
       <ScrollView>
-        <GameCard />
+        <AnimatedGameCard />
       </ScrollView>
       {/* 
       { games.lenght === 0 ? (
