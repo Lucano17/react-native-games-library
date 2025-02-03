@@ -40,6 +40,8 @@ export function Main() {
         <AnimatedGameCard />
         <AnimatedGameCard />
         <AnimatedGameCard />
+        <AnimatedGameCard />
+        <AnimatedGameCard />
       </ScrollView>
       {/* 
       { games.lenght === 0 ? (
