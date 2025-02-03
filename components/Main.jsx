@@ -1,4 +1,5 @@
-import { View } from "react-native";
+import { Pressable, Text, View } from "react-native";
+import { Link } from "expo-router";
 // import { useEffect, useState } from "react";
 // import { getLatestGames } from "../lib/metacritic";
 import { ScrollView } from "react-native";
@@ -21,7 +22,15 @@ export function Main() {
       <View style={{ marginBottom: 20 }}>
         <Logo />
       </View>
+      <Link href={"/about"} asChild>
+        <Pressable>
+          <Text className="text-blue-400 text-xl mt-24">Ir al about</Text>
+        </Pressable>
+      </Link>
       <ScrollView>
+        <AnimatedGameCard />
+        <AnimatedGameCard />
+        <AnimatedGameCard />
         <AnimatedGameCard />
       </ScrollView>
       {/* 

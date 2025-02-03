@@ -6,11 +6,11 @@ import { SafeAreaProvider } from "react-native-safe-area-context";
 export default function App() {
   return (
     <SafeAreaProvider>
-    <View style={styles.container}>
-      <StatusBar style="light" />
+      <View style={styles.container}>
+        <StatusBar style="light" />
 
-      <Main/>
-    </View>
+        <Main />
+      </View>
     </SafeAreaProvider>
   );
 }

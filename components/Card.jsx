@@ -4,7 +4,7 @@ import { Score } from "./Score";
 
 export function GameCard({ game }) {
   return (
-    <View className="bg-slate-700 p-4 rounded-xl gap-4 mb-10">
+    <View className="bg-slate-700 p-4 rounded-xl gap-4 mb-10 flex flex-row">
       <Image
         source={{
           uri: "https://cdna.artstation.com/p/assets/images/images/037/801/742/medium/lee-court-oot-lc-v1.jpg?1621357457",
@@ -12,9 +12,11 @@ export function GameCard({ game }) {
         style={styles.image}
       />
       <View>
-        <Score />
-        <Text style={styles.title}>Game title</Text>
-        <Text className="text-white">Game description</Text>
+        <View className="flex flex-row items-center gap-2">
+          <Score />
+          <Text style={styles.title}>Game title</Text>
+        </View>
+        <Text className="text-white mt-5">Game description</Text>
       </View>
     </View>
   );
