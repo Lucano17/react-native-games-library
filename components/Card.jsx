@@ -24,9 +24,11 @@ export function GameCard({ game }) {
           <View>
             <View className="flex flex-row items-center gap-2">
               <Score />
-              <Text style={styles.title}>Game title</Text>
+              <Text style={styles.title}>{game.title}</Text>
             </View>
-            <Text className="text-white mt-5">Game description</Text>
+            <Text className="text-white mt-5">
+              {game.description.slice(0, 100)}...
+            </Text>
           </View>
         </View>
       </Pressable>

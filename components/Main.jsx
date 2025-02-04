@@ -1,39 +1,31 @@
-// import { useEffect, useState } from "react";
-// import { getLatestGames } from "../lib/metacritic";
-import { ScrollView } from "react-native";
+import { useEffect, useState } from "react";
+import { ActivityIndicator, FlatList } from "react-native";
 import { AnimatedGameCard } from "./Card";
 import { Screen } from "./Screen";
+import { fetchGames } from "../lib/giantbomb";
 
 export function Main() {
-  //   const [games, setGames] = useState([]);
+  const [games, setGames] = useState([]);
 
-  //   useEffect(() => {
-  //     getLatestGames().then((games) => {
-  //       setGames(games);
-  //     });
-  //   }, []);
+  useEffect(() => {
+    fetchGames().then((games) => {
+      setGames(games);
+    });
+  }, []);
 
   return (
     <Screen>
-      <ScrollView>
-        <AnimatedGameCard />
-        <AnimatedGameCard />
-        <AnimatedGameCard />
-        <AnimatedGameCard />
-        <AnimatedGameCard />
-        <AnimatedGameCard />
-      </ScrollView>
-      {/* 
-      { games.lenght === 0 ? (
-      <ActivityIndicator color={"#fff"} size={"large"} />
+      {Array.isArray(games) && games.length === 0 ? (
+        <ActivityIndicator color={"#fff"} size={"large"} />
       ) : (
         <FlatList
-        data={games}
-        keyExtractor={game => game.slug}
-        renderItem={({item, index}) => <GameCard game={item} index={index}/>}
+          data={games}
+          keyExtractor={(game) => game.slug || game.id.toString()}
+          renderItem={({ item, index }) => (
+            <AnimatedGameCard game={item} index={index} />
+          )}
         />
-        )
-      ))} */}
+      )}
     </Screen>
   );
 }
