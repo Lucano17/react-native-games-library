@@ -12,7 +12,7 @@ import { Link } from "expo-router";
 
 export function GameCard({ game }) {
   return (
-    <Link href={"/gameID"} asChild>
+    <Link href={`/${game.slug}`} asChild>
       <Pressable>
         <View className="bg-slate-700 p-4 rounded-xl gap-4 mb-10 flex flex-row">
           <Image source={{ uri: game.image }} style={styles.image} />
