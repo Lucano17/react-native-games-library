@@ -7,7 +7,7 @@ import {
   Text,
   View,
 } from "react-native";
-import { Score } from "./Score";
+// import { Score } from "./Score";
 import { Link } from "expo-router";
 
 export function GameCard({ game }) {
@@ -15,15 +15,10 @@ export function GameCard({ game }) {
     <Link href={"/gameID"} asChild>
       <Pressable>
         <View className="bg-slate-700 p-4 rounded-xl gap-4 mb-10 flex flex-row">
-          <Image
-            source={{
-              uri: "https://cdna.artstation.com/p/assets/images/images/037/801/742/medium/lee-court-oot-lc-v1.jpg?1621357457",
-            }}
-            style={styles.image}
-          />
+          <Image source={{ uri: game.image }} style={styles.image} />
           <View>
             <View className="flex flex-row items-center gap-2">
-              <Score />
+              {/* <Score score={game.score} /> */}
               <Text style={styles.title}>{game.title}</Text>
             </View>
             <Text className="text-white mt-5">
@@ -64,7 +59,7 @@ const styles = StyleSheet.create({
   },
   image: {
     width: 107,
-    height: 140,
+    height: 60,
     borderRadius: 10,
   },
   card: {
