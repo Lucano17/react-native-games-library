@@ -34,22 +34,6 @@ export function Main() {
         />
         )
       ))} */}
-
-      {/* <Pressable
-        onPress={() => {}}
-        style={({ pressed }) => [
-          {
-            backgroundColor: pressed ? "rgb(210, 230, 265)" : "white",
-          },
-          styles.wrapperCustom,
-        ]}
-      >
-        {({ pressed }) => (
-          <Text style={{ fontSize: pressed ? 32 : 16 }}>
-            {pressed ? "Pressed!" : "Press me"}
-          </Text>
-        )}
-      </Pressable> */}
     </Screen>
   );
 }
