@@ -16,7 +16,7 @@ export function GameCard({ game }) {
       <Pressable>
         <View className="bg-slate-700 p-4 rounded-xl gap-4 mb-10 flex flex-row">
           <Image source={{ uri: game.image }} style={styles.image} />
-          <View>
+          <View className="flex-auto">
             <View className="flex flex-row items-center gap-2">
               {/* <Score score={game.score} /> */}
               <Text style={styles.title}>{game.title}</Text>
@@ -59,7 +59,7 @@ const styles = StyleSheet.create({
   },
   image: {
     width: 107,
-    height: 60,
+    height: 107,
     borderRadius: 10,
   },
   card: {
