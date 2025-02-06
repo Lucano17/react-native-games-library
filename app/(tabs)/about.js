@@ -24,8 +24,13 @@ export default function About() {
           En esta aplicación estoy haciendo un{" "}
           <Text className="font-bold text-yellow-200">fetch de datos</Text> a la{" "}
           <Text className="font-bold text-yellow-200">API</Text> de{" "}
-          <Text className="font-bold text-yellow-200">Giant Bomb</Text>, de la
-          cual recupero una gran lista con más de{" "}
+          <Link
+            href={"https://www.giantbomb.com/"}
+            className="font-bold text-yellow-300"
+          >
+            Giant Bomb
+          </Link>
+          , de la cual recupero una gran lista con más de{" "}
           <Text className="font-bold text-yellow-200">100 videojuegos</Text>, y
           el detalle de cada uno, como imágenes, descripción, y tengo pensado
           agregar más a medida de que la app crezca.
