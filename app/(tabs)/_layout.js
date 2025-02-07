@@ -9,7 +9,7 @@ export default function TabsLayout() {
         tabBarStyle: {
           position: "absolute",
           height: 70,
-          backgroundColor: "transparent",
+          backgroundColor: "black",
           borderTopLeftRadius: 15,
           borderTopRightRadius: 15,
           borderRightWidth: 2,
